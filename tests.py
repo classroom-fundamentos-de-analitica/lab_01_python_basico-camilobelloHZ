@@ -8,7 +8,7 @@ import preguntas
 
 
 def test_01():
-    assert preguntas.pregunta_01("data.csv") == 214
+    assert preguntas.pregunta_01() == 214
 
 
 def test_02():

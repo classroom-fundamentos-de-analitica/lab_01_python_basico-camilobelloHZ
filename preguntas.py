@@ -13,7 +13,7 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 """
 
 
-def pregunta_01(data):
+def pregunta_01():
     """
     Retorne la suma de la segunda columna.
 
@@ -22,7 +22,7 @@ def pregunta_01(data):
 
     """
     suma = 0 
-    with open(data, "r") as archivo:
+    with open("data.csv", "r") as archivo:
         for linea in archivo:
             # Dividir la línea en columnas separadas por tabulaciones
             columnas= linea.strip().split('\t')
@@ -37,12 +37,12 @@ def pregunta_01(data):
                     pass
     return(suma)
 
-resultado = pregunta_01("data.csv")
+resultado = pregunta_01()
 print(resultado) 
 
 
 
-def pregunta_02(data):
+def pregunta_02():
     """
     Retorne la cantidad de registros por cada letra de la primera columna como la lista
     de tuplas (letra, cantidad), ordendas alfabéticamente.
@@ -58,7 +58,7 @@ def pregunta_02(data):
 
     """
     conteo = {}
-    with open(data, "r") as archivo:
+    with open("data.csv", "r") as archivo:
         for linea in archivo:
             columna_primera= linea.strip().split('\t')[0]
             conteo[columna_primera] = conteo.get(columna_primera, 0) + 1
@@ -70,11 +70,11 @@ def pregunta_02(data):
 
     return lista_tuplas
 
-resultado = pregunta_02("data.csv")
+resultado = pregunta_02()
 print(resultado)
 
 
-def pregunta_03(data):
+def pregunta_03():
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como una lista
     de tuplas (letra, suma) ordendas alfabeticamente.
@@ -90,7 +90,7 @@ def pregunta_03(data):
 
     """
     suma_por_letra = {}
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             letra = columnas[0]
@@ -111,10 +111,10 @@ def pregunta_03(data):
     return lista_tuplas
 
 # Llamar a la función con el nombre del archivo
-resultado = pregunta_03('data.csv')
+resultado = pregunta_03()
 print(resultado)
 
-def pregunta_04(data):
+def pregunta_04():
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la cantidad de
     registros por cada mes, tal como se muestra a continuación.
@@ -137,7 +137,7 @@ def pregunta_04(data):
 
     """
     conteo_meses = {}
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             fecha = columnas[2]
@@ -152,11 +152,11 @@ def pregunta_04(data):
 
     return lista_tuplas
 
-resultado = pregunta_04('data.csv')
+resultado = pregunta_04()
 print(resultado)
 
 
-def pregunta_05(data):
+def pregunta_05():
     """
     Retorne una lista de tuplas con el valor maximo y minimo de la columna 2 por cada
     letra de la columa 1.
@@ -172,7 +172,7 @@ def pregunta_05(data):
 
     """
     max_min_por_letra = {}
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             letra = columnas[0]
@@ -193,12 +193,12 @@ def pregunta_05(data):
     return lista_tuplas
 
 # Llamar a la función con el nombre del archivo
-resultado = pregunta_05('data.csv')
+resultado = pregunta_05()
 print(resultado)
 
 
 
-def pregunta_06(data):
+def pregunta_06():
     """
     La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
     una clave y el valor despues del caracter `:` corresponde al valor asociado a la
@@ -221,7 +221,7 @@ def pregunta_06(data):
 
     """
     valores_por_clave = {}
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             diccionario_codificado = columnas[4]
@@ -247,11 +247,11 @@ def pregunta_06(data):
     return lista_tuplas
 
 # Llamar a la función con el nombre del archivo
-resultado = pregunta_06('data.csv')
+resultado = pregunta_06()
 print(resultado)
 
 
-def pregunta_07(data):
+def pregunta_07():
     """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla contiene un
     valor posible de la columna 2 y una lista con todas las letras asociadas (columna 1)
@@ -274,7 +274,7 @@ def pregunta_07(data):
     """
 
     asociaciones = {}
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             valor_columna2 = int(columnas[1])
@@ -293,12 +293,12 @@ def pregunta_07(data):
     return lista_tuplas
 
 # Llamar a la función con el nombre del archivo
-resultado = pregunta_07('data.csv')
+resultado = pregunta_07()
 print(resultado)
     
 
 
-def pregunta_08(data):
+def pregunta_08():
     """
     Genere una lista de tuplas, donde el primer elemento de cada tupla contiene  el valor
     de la segunda columna; la segunda parte de la tupla es una lista con las letras
@@ -321,7 +321,7 @@ def pregunta_08(data):
 
     """
     asociaciones = {}
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             valor_columna2 = int(columnas[1])
@@ -339,11 +339,11 @@ def pregunta_08(data):
     return lista_tuplas
 
 # Llamar a la función con el nombre del archivo
-resultado = pregunta_08('data.csv')
+resultado = pregunta_08()
 print(resultado)
 
 
-def pregunta_09(data):
+def pregunta_09():
     """
     Retorne un diccionario que contenga la cantidad de registros en que aparece cada
     clave de la columna 5.
@@ -365,7 +365,7 @@ def pregunta_09(data):
     """
 
     conteo_claves = {}
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             diccionario_codificado = columnas[4]
@@ -379,11 +379,11 @@ def pregunta_09(data):
     return conteo_claves_ordenado
 
 # Llamar a la función con el nombre del archivo
-resultado = pregunta_09('data.csv')
+resultado = pregunta_09()
 print(resultado)
 
 
-def pregunta_10(data):
+def pregunta_10():
     """
     Retorne una lista de tuplas contengan por cada tupla, la letra de la columna 1 y la
     cantidad de elementos de las columnas 4 y 5.
@@ -402,7 +402,7 @@ def pregunta_10(data):
 
     """
     conteo_elementos = []
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             letra_columna1 = columnas[0]
@@ -413,11 +413,11 @@ def pregunta_10(data):
     return conteo_elementos
 
 # Llamar a la función con el nombre del archivo
-resultado = pregunta_10('data.csv')
+resultado = pregunta_10()
 print(resultado)
 
 
-def pregunta_11(data):
+def pregunta_11():
     """
     Retorne un diccionario que contengan la suma de la columna 2 para cada letra de la
     columna 4, ordenadas alfabeticamente.
@@ -436,7 +436,7 @@ def pregunta_11(data):
 
     """
     suma_por_letra = {}
-    with open(data, 'r') as archivo:
+    with open("data.csv", 'r') as archivo:
         for linea in archivo:
             columnas = linea.strip().split('\t')
             letras_columna4 = columnas[3].split(',')
@@ -449,10 +449,10 @@ def pregunta_11(data):
     return conteo_claves_ordenado
 
 
-resultado = pregunta_11('data.csv')
+resultado = pregunta_11()
 print(resultado)
 
-def pregunta_12(data):
+def pregunta_12():
     """
     Genere un diccionario que contengan como clave la columna 1 y como valor la suma de
     los valores de la columna 5 sobre todo el archivo.
@@ -471,7 +471,7 @@ def pregunta_12(data):
     suma_columna5_dict = {}
 
     # Abrimos el archivo en modo lectura
-    with open(data, 'r') as file:
+    with open("data.csv", 'r') as file:
         # Iteramos sobre cada línea del archivo
         for line in file:
             # Dividimos la línea en sus elementos separados por tabulaciones
@@ -504,8 +504,7 @@ def pregunta_12(data):
     return suma_columna5_dict_ordenado
 
 # Llamamos a la función y mostramos el resultado
-resultado = pregunta_12("data.csv")
+resultado = pregunta_12()
 print(resultado)
 
 
-#camilo
