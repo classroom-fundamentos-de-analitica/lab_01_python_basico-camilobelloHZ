@@ -506,3 +506,6 @@ def pregunta_12(data):
 # Llamamos a la función y mostramos el resultado
 resultado = pregunta_12("data.csv")
 print(resultado)
+
+
+#camilo
