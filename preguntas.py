@@ -508,3 +508,6 @@ resultado = pregunta_12()
 print(resultado)
 
 
+# c 
+
+
